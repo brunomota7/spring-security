@@ -29,7 +29,7 @@ public class TweetService {
 
     public void createTweet(CreateTweetDto dto, String userId) {
         var user = userRepository.findById(UUID.fromString(userId))
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Uset not found!"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found!"));
 
         var tweet = new Tweet();
         tweet.setUser(user);
